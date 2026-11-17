@@ -37,7 +37,7 @@ const en: Dictionary = {
     metricsLive: "Live metrics",
     risk: "Strict risk management",
     cardLabel: "Live performance",
-    strategy: "Smart Forex Pro strategy",
+    strategy: "Smart Forex strategy",
     winRate: "Win rate",
     avgMonthly: "Avg. monthly",
     maxDd: "Max drawdown",
