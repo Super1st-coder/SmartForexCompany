@@ -1,0 +1,16 @@
+node_modules
+.next
+.git
+.gitignore
+*.md
+ads
+tools
+scripts
+statement2.htm
+performances.html
+.env*
+.DS_Store
+tsconfig.tsbuildinfo
+eslint.config.mjs
+deploy/*.py
+scripts

@@ -1,0 +1,578 @@
+/**
+ * Client FX Blue pour les métriques publiques (SmartForexPro).
+ * Source : https://www.fxblue.com/users/SmartForexPro
+ */
+
+import type { WeltradeMetrics } from "@/lib/weltrade";
+
+export const FXBLUE = {
+  userId: "SmartForexPro",
+  profileUrl: "https://www.fxblue.com/users/SmartForexPro",
+  apiBase: "https://api.fxblue.com",
+} as const;
+
+const MONTH_SHORT_FR = [
+  "Jan",
+  "Fév",
+  "Mar",
+  "Avr",
+  "Mai",
+  "Juin",
+  "Juil",
+  "Août",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Déc",
+];
+
+type OverviewStats = {
+  balance: number;
+  equity: number;
+  floatingPl: number;
+  closedProfit: number;
+  totalReturnPct: number;
+  monthlyReturnPct: number;
+  weeklyReturnPct: number;
+  peakDrawdownPct: number;
+  winRatePct: number;
+  profitFactor: number;
+  historyDays: number;
+  currency: string;
+};
+
+type FxOrder = {
+  ticket: number;
+  type?: string;
+  action?: string;
+  symbol?: string;
+  lots?: number;
+  openPrice?: number;
+  closePrice?: number;
+  profit?: number;
+  totalProfit?: number;
+  openDate?: string;
+  closeDate?: string;
+  result?: string;
+};
+
+type FxOrderList = {
+  totalRecords: number;
+  lastUpdateTimeUnix?: number;
+  orders: FxOrder[];
+  totals?: {
+    total_orderCount?: number;
+    total_grossProfit?: number;
+    total_netProfit?: number;
+    total_lots?: number;
+    total_deposits?: number;
+    total_orders?: number;
+  };
+};
+
+type FxMonthGroup = {
+  group: string;
+  trades: number;
+  winners: number;
+  losers: number;
+  winpc: number;
+  netProfit: number;
+  percentageChange?: number;
+};
+
+function stripBom(text: string) {
+  return text.replace(/^\uFEFF/, "").trim();
+}
+
+/** FX Blue renvoie parfois `({...})` avec clés non quotées. */
+function parseFxJson<T>(raw: string): T {
+  let text = stripBom(raw);
+  if (text.startsWith("(") && text.endsWith(")")) {
+    text = text.slice(1, -1);
+  }
+  try {
+    return JSON.parse(text) as T;
+  } catch {
+    // Convertit un littéral JS quasi-JSON en JSON.
+    const fixed = text
+      .replace(/([{,]\s*)([A-Za-z_][A-Za-z0-9_]*)\s*:/g, '$1"$2":')
+      .replace(/'/g, '"');
+    return JSON.parse(fixed) as T;
+  }
+}
+
+function parseNumber(raw: string | undefined | null): number | null {
+  if (raw == null) return null;
+  const cleaned = raw
+    .replace(/\u00a0/g, " ")
+    .replace(/[+\s%]/g, "")
+    .replace(/,/g, "");
+  if (!cleaned || cleaned === "—" || cleaned === "-") return null;
+  const n = Number(cleaned);
+  return Number.isFinite(n) ? n : null;
+}
+
+function extractLabeledValue(html: string, label: string): string | null {
+  // Les cellules de valeur ont class="AR" ou class="Shade AR".
+  const re = new RegExp(
+    `${label}\\s*:?[\\s\\S]{0,160}?class="[^"]*\\bAR\\b[^"]*"[^>]*>([\\s\\S]*?)</td>`,
+    "i"
+  );
+  const m = html.match(re);
+  if (!m) return null;
+  return m[1].replace(/<[^>]+>/g, "").replace(/\s+/g, " ").trim();
+}
+
+function parseOverviewHtml(html: string): OverviewStats {
+  const currencyMatch = html.match(/\(([A-Z]{3})\)/);
+  const currency = currencyMatch?.[1] ?? "USD";
+
+  const balance = parseNumber(extractLabeledValue(html, "Balance")) ?? 0;
+  const equity = parseNumber(extractLabeledValue(html, "Equity")) ?? balance;
+  const floatingPl =
+    parseNumber(extractLabeledValue(html, "Floating P/L")) ?? equity - balance;
+  const closedProfit =
+    parseNumber(extractLabeledValue(html, "Closed profit")) ?? 0;
+
+  const totalReturnPct =
+    parseNumber(extractLabeledValue(html, "Total return")) ?? 0;
+  // Sur FX Blue, « Monthly return » / « Weekly return » = moyennes, pas le mois en cours.
+  const monthlyReturnPct =
+    parseNumber(extractLabeledValue(html, "Monthly return")) ?? 0;
+  const weeklyReturnPct =
+    parseNumber(extractLabeledValue(html, "Weekly return")) ?? 0;
+  const peakDrawdownPct = Math.abs(
+    parseNumber(extractLabeledValue(html, "Peak drawdown")) ?? 0
+  );
+  const winRatePct =
+    parseNumber(extractLabeledValue(html, "Trade win %")) ?? 0;
+  const profitFactor =
+    parseNumber(extractLabeledValue(html, "Profit factor")) ?? 0;
+
+  const historyRaw = extractLabeledValue(html, "History");
+  let historyDays = 0;
+  if (historyRaw) {
+    const dm = historyRaw.match(/([\d.,]+)\s*days?/i);
+    historyDays = parseNumber(dm?.[1] ?? historyRaw) ?? 0;
+  }
+
+  return {
+    balance,
+    equity,
+    floatingPl,
+    closedProfit,
+    totalReturnPct,
+    monthlyReturnPct,
+    weeklyReturnPct,
+    peakDrawdownPct,
+    winRatePct,
+    profitFactor,
+    historyDays,
+    currency,
+  };
+}
+
+function extractChartRows(html: string): Array<[string, ...number[]]> {
+  const m = html.match(/data\.addRows\(\[([\s\S]*?)\]\s*\);/);
+  if (!m) return [];
+  const rows: Array<[string, ...number[]]> = [];
+  const re = /\[\s*(?:'([^']*)'|"([^"]*)")\s*,\s*([-\d.]+)(?:\s*,\s*([-\d.]+))?\s*\]/g;
+  let match: RegExpExecArray | null;
+  while ((match = re.exec(m[1])) !== null) {
+    const label = match[1] ?? match[2] ?? "";
+    const v1 = Number(match[3]);
+    if (!Number.isFinite(v1)) continue;
+    if (match[4] != null && match[4] !== "") {
+      const v2 = Number(match[4]);
+      rows.push([label, v1, Number.isFinite(v2) ? v2 : 0]);
+    } else {
+      rows.push([label, v1]);
+    }
+  }
+  return rows;
+}
+
+/** Parse dates type "9/4/2023" ou "Start" (US m/d/yyyy). */
+function parseUsDate(label: string): Date | null {
+  if (!label || label === "Start") return null;
+  const m = label.match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+  if (!m) return null;
+  const month = Number(m[1]);
+  const day = Number(m[2]);
+  const year = Number(m[3]);
+  const d = new Date(Date.UTC(year, month - 1, day));
+  return Number.isNaN(d.getTime()) ? null : d;
+}
+
+/** Parse "Mon 10 Aug 2026 17:41:55" (FX Blue order dates). */
+function parseFxOrderDate(raw: string | undefined): string {
+  if (!raw) return "";
+  if (/1970/.test(raw)) return "";
+  const m = raw.match(
+    /\w{3}\s+(\d{1,2})\s+(\w{3})\s+(\d{4})\s+(\d{2}):(\d{2}):(\d{2})/
+  );
+  if (!m) {
+    const d = new Date(raw);
+    return Number.isNaN(d.getTime()) ? "" : d.toISOString();
+  }
+  const months: Record<string, number> = {
+    Jan: 0,
+    Feb: 1,
+    Mar: 2,
+    Apr: 3,
+    May: 4,
+    Jun: 5,
+    Jul: 6,
+    Aug: 7,
+    Sep: 8,
+    Oct: 9,
+    Nov: 10,
+    Dec: 11,
+  };
+  const mon = months[m[2]];
+  if (mon == null) return "";
+  const d = new Date(
+    Date.UTC(
+      Number(m[3]),
+      mon,
+      Number(m[1]),
+      Number(m[4]),
+      Number(m[5]),
+      Number(m[6])
+    )
+  );
+  return d.toISOString();
+}
+
+function monthKeyFromGroup(group: string): string | null {
+  // "2023/09"
+  const m = group.match(/^(\d{4})\/(\d{1,2})$/);
+  if (!m) return null;
+  return `${m[1]}-${String(Number(m[2])).padStart(2, "0")}`;
+}
+
+function monthKeyFromUsDate(label: string): string | null {
+  const d = parseUsDate(label);
+  if (!d) return null;
+  return `${d.getUTCFullYear()}-${String(d.getUTCMonth() + 1).padStart(2, "0")}`;
+}
+
+function buildMonthlyFromChart(
+  rows: Array<[string, ...number[]]>
+): WeltradeMetrics["monthlyReturns"] {
+  return rows
+    .map(([label, ret]) => {
+      const key = monthKeyFromUsDate(label);
+      const d = parseUsDate(label);
+      if (!key || !d) return null;
+      const idx = d.getUTCMonth();
+      const year = d.getUTCFullYear();
+      return {
+        month: key,
+        label: `${MONTH_SHORT_FR[idx]} ${year}`,
+        shortLabel: `${MONTH_SHORT_FR[idx]} ${String(year).slice(2)}`,
+        returnPct: ret,
+      };
+    })
+    .filter((x): x is NonNullable<typeof x> => x != null);
+}
+
+function buildEquityCurve(
+  balanceRows: Array<[string, ...number[]]>,
+  returnRows: Array<[string, ...number[]]>
+): WeltradeMetrics["equityCurve"] {
+  const returnMap = new Map<string, number>();
+  for (const [label, ret] of returnRows) {
+    const d = parseUsDate(label);
+    if (!d) continue;
+    returnMap.set(d.toISOString().slice(0, 10), ret);
+  }
+
+  const curve: WeltradeMetrics["equityCurve"] = [];
+  let prevBalance: number | null = null;
+  for (const row of balanceRows) {
+    const [label, balance] = row;
+    const d = parseUsDate(label);
+    if (!d || !Number.isFinite(balance)) continue;
+    const date = d.toISOString().slice(0, 10);
+    const deposit = row[2] ?? 0;
+    curve.push({
+      date,
+      timestamp: Math.floor(d.getTime() / 1000),
+      balance,
+      equity: balance,
+      returnPct: returnMap.get(date) ?? 0,
+      profit: prevBalance == null ? balance - deposit : balance - prevBalance,
+    });
+    prevBalance = balance;
+  }
+  return curve;
+}
+
+function downsampleCurve(
+  curve: WeltradeMetrics["equityCurve"],
+  maxPoints = 400
+): WeltradeMetrics["equityCurve"] {
+  if (curve.length <= maxPoints) return curve;
+  const step = Math.ceil(curve.length / maxPoints);
+  const out: WeltradeMetrics["equityCurve"] = [];
+  for (let i = 0; i < curve.length; i += step) out.push(curve[i]);
+  const last = curve[curve.length - 1];
+  if (out[out.length - 1]?.date !== last.date) out.push(last);
+  return out;
+}
+
+async function fxFetch(path: string, init?: RequestInit): Promise<string> {
+  const url = path.startsWith("http")
+    ? path
+    : `${FXBLUE.apiBase}${path.startsWith("/") ? "" : "/"}${path}`;
+
+  const res = await fetch(url, {
+    ...init,
+    headers: {
+      Accept: "text/html,application/json,*/*",
+      "User-Agent":
+        "Mozilla/5.0 (compatible; SmartForexPro/1.0; +https://smartforexpro.com)",
+      ...(init?.headers ?? {}),
+    },
+    next: { revalidate: 60 },
+  });
+
+  if (!res.ok) {
+    throw new Error(`FX Blue HTTP ${res.status} for ${path}`);
+  }
+  return res.text();
+}
+
+const EMPTY_ORDERS = "({totalRecords:0,orders:[]})";
+const EMPTY_GROUPS = "({totalGroups:0,groups:[]})";
+
+/** Un endpoint secondaire en échec ou vide ne doit pas casser toute la page. */
+function optionalFetch(path: string, fallback = ""): Promise<string> {
+  return fxFetch(path)
+    .then((text) => (stripBom(text) ? text : fallback))
+    .catch((error) => {
+      console.warn("[fxblue] endpoint ignoré:", path, error instanceof Error ? error.message : error);
+      return fallback;
+    });
+}
+
+function safeParseFxJson<T>(raw: string, fallback: T): T {
+  try {
+    return stripBom(raw) ? parseFxJson<T>(raw) : fallback;
+  } catch {
+    return fallback;
+  }
+}
+
+export async function fetchFxBlueMetrics(): Promise<WeltradeMetrics> {
+  const id = FXBLUE.userId;
+
+  const [
+    overviewHtml,
+    ordersRaw,
+    openOrdersRaw,
+    monthAnalysisRaw,
+    symbolAnalysisRaw,
+    monthlyChartHtml,
+    balanceChartHtml,
+    returnChartHtml,
+  ] = await Promise.all([
+    fxFetch(`/wl/view.aspx?id=${id}&mode=overview&isinline=1`),
+    optionalFetch(
+      `/wl/data/_OrderList.aspx?id=${id}&filterorderstate=closed&start=0&limit=12&sort=closeDate&dir=DESC`,
+      EMPTY_ORDERS
+    ),
+    optionalFetch(
+      `/wl/data/_OrderList.aspx?id=${id}&filterorderstate=open&start=0&limit=1`,
+      EMPTY_ORDERS
+    ),
+    optionalFetch(`/wl/data/_Analysis.aspx?id=${id}&type=month`, EMPTY_GROUPS),
+    optionalFetch(`/wl/data/_Analysis.aspx?id=${id}&type=symbol`, EMPTY_GROUPS),
+    optionalFetch(`/wl/charts/ch_monthlyreturn.aspx?id=${id}`),
+    optionalFetch(`/wl/charts/ch_balance.aspx?id=${id}`),
+    optionalFetch(`/wl/charts/ch_cumulativereturn.aspx?id=${id}`),
+  ]);
+
+  const overview = parseOverviewHtml(overviewHtml);
+  const orderList = safeParseFxJson<FxOrderList>(ordersRaw, { totalRecords: 0, orders: [] } as FxOrderList);
+  const openList = safeParseFxJson<FxOrderList>(openOrdersRaw, { totalRecords: 0, orders: [] } as FxOrderList);
+  const monthAnalysis = safeParseFxJson<{
+    totalGroups: number;
+    groups: FxMonthGroup[];
+  }>(monthAnalysisRaw, { totalGroups: 0, groups: [] });
+  const symbolAnalysis = safeParseFxJson<{
+    totalGroups: number;
+    groups: Array<{ group: string; trades: number }>;
+  }>(symbolAnalysisRaw, { totalGroups: 0, groups: [] });
+
+  const monthlyChartRows = extractChartRows(monthlyChartHtml);
+  const balanceRows = extractChartRows(balanceChartHtml);
+  const returnRows = extractChartRows(returnChartHtml);
+
+  let monthlyReturns = buildMonthlyFromChart(monthlyChartRows);
+  if (!monthlyReturns.length && monthAnalysis.groups?.length) {
+    monthlyReturns = monthAnalysis.groups
+      .map((g) => {
+        const key = monthKeyFromGroup(g.group);
+        if (!key) return null;
+        const [y, m] = key.split("-").map(Number);
+        return {
+          month: key,
+          label: `${MONTH_SHORT_FR[m - 1]} ${y}`,
+          shortLabel: `${MONTH_SHORT_FR[m - 1]} ${String(y).slice(2)}`,
+          returnPct: g.percentageChange ?? 0,
+        };
+      })
+      .filter((x): x is NonNullable<typeof x> => x != null);
+  }
+
+  // Mois en cours = dernier mois du graphique (ex. août 2026 = 0.2 %),
+  // distinct de la moyenne mensuelle FX Blue (« Monthly return »).
+  const returnMonthPct =
+    monthlyReturns.length > 0
+      ? monthlyReturns[monthlyReturns.length - 1].returnPct
+      : 0;
+
+  const avgFromMonths =
+    monthlyReturns.length > 0
+      ? monthlyReturns.reduce((s, m) => s + m.returnPct, 0) /
+        monthlyReturns.length
+      : overview.monthlyReturnPct;
+
+  const equityCurve = downsampleCurve(
+    buildEquityCurve(balanceRows, returnRows)
+  );
+
+  const firstBalance = balanceRows.find((r) => parseUsDate(r[0]));
+  const lastBalance = [...balanceRows].reverse().find((r) => parseUsDate(r[0]));
+  const firstDealAt = firstBalance
+    ? parseUsDate(firstBalance[0])?.toISOString() ?? null
+    : null;
+  const lastChartAt = lastBalance
+    ? parseUsDate(lastBalance[0])?.toISOString() ?? null
+    : null;
+
+  const lastUpdateAt = orderList.lastUpdateTimeUnix
+    ? new Date(orderList.lastUpdateTimeUnix * 1000).toISOString()
+    : lastChartAt;
+
+  const totalTradesFromMonths = (monthAnalysis.groups ?? []).reduce(
+    (s, g) => s + (g.trades || 0),
+    0
+  );
+  const winnersFromMonths = (monthAnalysis.groups ?? []).reduce(
+    (s, g) => s + (g.winners || 0),
+    0
+  );
+  const totalTrades =
+    totalTradesFromMonths ||
+    orderList.totals?.total_orders ||
+    orderList.totalRecords ||
+    0;
+
+  const winRatePct =
+    overview.winRatePct ||
+    (totalTrades > 0 && winnersFromMonths > 0
+      ? (winnersFromMonths / totalTrades) * 100
+      : 0);
+
+  const symbols = (symbolAnalysis.groups ?? [])
+    .slice()
+    .sort((a, b) => (b.trades || 0) - (a.trades || 0))
+    .map((g) => g.group)
+    .filter(Boolean);
+
+  const recentTrades: WeltradeMetrics["recentTrades"] = (orderList.orders ?? [])
+    .filter(
+      (o) =>
+        o.type === "Closed position" &&
+        o.closeDate &&
+        !/1970/.test(o.closeDate)
+    )
+    .slice(0, 12)
+    .map((o) => ({
+      id: o.ticket,
+      symbol: o.symbol ?? symbols[0] ?? "XAUUSD",
+      type: (o.action || "").toLowerCase().startsWith("sell")
+        ? ("Short" as const)
+        : ("Long" as const),
+      lots: o.lots ?? 0,
+      priceOpen: o.openPrice ?? 0,
+      priceClose: o.closePrice ?? 0,
+      profit: o.totalProfit ?? o.profit ?? 0,
+      closedAt: parseFxOrderDate(o.closeDate),
+      openAt: parseFxOrderDate(o.openDate),
+    }));
+
+  const ageDays =
+    overview.historyDays ||
+    (firstDealAt
+      ? Math.max(
+          1,
+          Math.round(
+            (Date.now() - new Date(firstDealAt).getTime()) / (1000 * 60 * 60 * 24)
+          )
+        )
+      : 0);
+  const ageMonths = Math.max(1, Math.round(ageDays / 30.44));
+
+  const deposits = orderList.totals?.total_deposits ?? 1000;
+  const balance = overview.balance || (lastBalance?.[1] as number) || 0;
+  const equity = overview.equity || balance;
+  const profit =
+    overview.closedProfit ||
+    orderList.totals?.total_netProfit ||
+    balance - deposits;
+
+  // Courbe de perf cumulée simple à partir des rendements mensuels
+  const cumulativePerf: number[] = [];
+  let acc = 1;
+  for (const m of monthlyReturns) {
+    acc *= 1 + m.returnPct / 100;
+    cumulativePerf.push((acc - 1) * 100);
+  }
+
+  return {
+    fetchedAt: new Date().toISOString(),
+    strategyName: "Smart Forex Pro",
+    traderName: "Smart Forex Pro",
+    country: "CH",
+    currency: overview.currency,
+    displayCurrency: overview.currency === "USC" ? "USD" : overview.currency,
+    moneyScale: 1,
+    balance,
+    equity,
+    profit,
+    minDeposit: 500,
+    leverage: 0,
+    ageMonths,
+    ageDays,
+    firstDealAt,
+    lastUpdateAt,
+    totalReturnPct: overview.totalReturnPct,
+    returnWeekPct: overview.weeklyReturnPct,
+    returnMonthPct,
+    returnDayPct: 0,
+    avgMonthlyReturnPct: overview.monthlyReturnPct || avgFromMonths,
+    maxDrawdownPct: overview.peakDrawdownPct,
+    sharpe: 0,
+    riskLevel: 0,
+    winRatePct,
+    lossRatePct: Math.max(0, 100 - winRatePct),
+    totalTrades,
+    openTrades: openList.totalRecords ?? 0,
+    profitableDaysPct: 0,
+    losingDaysPct: 0,
+    recoveryFactor: overview.profitFactor || null,
+    volatility: null,
+    performanceFeePct: 35,
+    subscriptionFee: 0,
+    managementFeePct: 0,
+    symbols: symbols.length ? symbols : ["XAUUSD"],
+    monthlyReturns,
+    equityCurve,
+    recentTrades,
+    cumulativePerf,
+  };
+}

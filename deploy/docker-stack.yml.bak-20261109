@@ -1,0 +1,49 @@
+# Smart Forex Pro — Docker Swarm + Traefik (AgentiaplusNet)
+# Deploy: docker stack deploy -c deploy/docker-stack.yml smartforexpro
+version: "3.8"
+
+services:
+  app:
+    image: smartforexpro-app:latest
+    networks:
+      - AgentiaplusNet
+    environment:
+      NODE_ENV: production
+      PORT: "3000"
+      HOSTNAME: "0.0.0.0"
+      RESEND_API_KEY: ${RESEND_API_KEY:-}
+      RESEND_FROM_EMAIL: ${RESEND_FROM_EMAIL:-"Smart Forex Pro <contact@smartforexpro.com>"}
+      RESEND_TO_EMAIL: ${RESEND_TO_EMAIL:-contact@smartforexpro.com}
+      RESEND_AUTO_REPLY: ${RESEND_AUTO_REPLY:-true}
+    deploy:
+      mode: replicated
+      replicas: 1
+      placement:
+        constraints:
+          - node.role == manager
+      restart_policy:
+        condition: on-failure
+        delay: 5s
+      resources:
+        limits:
+          cpus: "1.0"
+          memory: 1024M
+      labels:
+        - traefik.enable=true
+        - traefik.http.routers.smartforexpro.rule=Host(`smartforexpro.com`) || Host(`www.smartforexpro.com`)
+        - traefik.http.routers.smartforexpro.entrypoints=websecure
+        - traefik.http.routers.smartforexpro.tls.certresolver=letsencryptresolver
+        - traefik.http.routers.smartforexpro.priority=10
+        - traefik.http.routers.smartforexpro.service=smartforexpro
+        - traefik.http.services.smartforexpro.loadbalancer.server.port=3000
+        - traefik.http.services.smartforexpro.loadbalancer.passHostHeader=true
+        - traefik.http.routers.smartforexpro-http.rule=Host(`smartforexpro.com`) || Host(`www.smartforexpro.com`)
+        - traefik.http.routers.smartforexpro-http.entrypoints=web
+        - traefik.http.routers.smartforexpro-http.middlewares=smartforexpro-https-redirect
+        - traefik.http.middlewares.smartforexpro-https-redirect.redirectscheme.scheme=https
+        - traefik.http.middlewares.smartforexpro-https-redirect.redirectscheme.permanent=true
+
+networks:
+  AgentiaplusNet:
+    external: true
+    name: AgentiaplusNet

@@ -1,0 +1,1985 @@
+{
+  "summary": {
+    "currency": "USD",
+    "account": "8068048",
+    "strategy": "Smayllee EA v5.4",
+    "instrument": "XAUUSD",
+    "initialBalance": 500,
+    "finalBalance": 42340.85,
+    "totalNetProfit": 41840.85,
+    "totalNetProfitPct": 8368.17,
+    "avgMonthlyProfit": 1494.32,
+    "grossProfit": 46675.3,
+    "grossLoss": 4834.45,
+    "profitFactor": 9.65,
+    "maxDrawdownAbs": 1127.52,
+    "maxDrawdownPct": 6.27,
+    "totalTrades": 489,
+    "wins": 444,
+    "losses": 44,
+    "breakeven": 1,
+    "winRate": 90.8,
+    "periodStart": "2024-04-08",
+    "periodEnd": "2026-07-29",
+    "months": 28
+  },
+  "monthly": [
+    {
+      "month": "2024-04",
+      "label": "Avr 2024",
+      "shortLabel": "Avr 24",
+      "profit": 53.56,
+      "trades": 11,
+      "wins": 11,
+      "losses": 0,
+      "winRate": 100
+    },
+    {
+      "month": "2024-05",
+      "label": "Mai 2024",
+      "shortLabel": "Mai 24",
+      "profit": 29.09,
+      "trades": 9,
+      "wins": 9,
+      "losses": 0,
+      "winRate": 100
+    },
+    {
+      "month": "2024-06",
+      "label": "Juin 2024",
+      "shortLabel": "Juin 24",
+      "profit": 25.57,
+      "trades": 7,
+      "wins": 7,
+      "losses": 0,
+      "winRate": 100
+    },
+    {
+      "month": "2024-07",
+      "label": "Juil 2024",
+      "shortLabel": "Juil 24",
+      "profit": 54.68,
+      "trades": 15,
+      "wins": 15,
+      "losses": 0,
+      "winRate": 100
+    },
+    {
+      "month": "2024-08",
+      "label": "Août 2024",
+      "shortLabel": "Août 24",
+      "profit": 6.67,
+      "trades": 2,
+      "wins": 2,
+      "losses": 0,
+      "winRate": 100
+    },
+    {
+      "month": "2024-09",
+      "label": "Sep 2024",
+      "shortLabel": "Sep 24",
+      "profit": 26.29,
+      "trades": 6,
+      "wins": 6,
+      "losses": 0,
+      "winRate": 100
+    },
+    {
+      "month": "2024-10",
+      "label": "Oct 2024",
+      "shortLabel": "Oct 24",
+      "profit": 14.16,
+      "trades": 5,
+      "wins": 4,
+      "losses": 1,
+      "winRate": 80
+    },
+    {
+      "month": "2024-11",
+      "label": "Nov 2024",
+      "shortLabel": "Nov 24",
+      "profit": 145.47,
+      "trades": 23,
+      "wins": 22,
+      "losses": 1,
+      "winRate": 95.7
+    },
+    {
+      "month": "2024-12",
+      "label": "Déc 2024",
+      "shortLabel": "Déc 24",
+      "profit": 49.6,
+      "trades": 6,
+      "wins": 5,
+      "losses": 1,
+      "winRate": 83.3
+    },
+    {
+      "month": "2025-01",
+      "label": "Jan 2025",
+      "shortLabel": "Jan 25",
+      "profit": 49.26,
+      "trades": 7,
+      "wins": 7,
+      "losses": 0,
+      "winRate": 100
+    },
+    {
+      "month": "2025-02",
+      "label": "Fév 2025",
+      "shortLabel": "Fév 25",
+      "profit": 88.14,
+      "trades": 10,
+      "wins": 10,
+      "losses": 0,
+      "winRate": 100
+    },
+    {
+      "month": "2025-03",
+      "label": "Mar 2025",
+      "shortLabel": "Mar 25",
+      "profit": 77.7,
+      "trades": 7,
+      "wins": 7,
+      "losses": 0,
+      "winRate": 100
+    },
+    {
+      "month": "2025-04",
+      "label": "Avr 2025",
+      "shortLabel": "Avr 25",
+      "profit": 321.07,
+      "trades": 27,
+      "wins": 23,
+      "losses": 4,
+      "winRate": 85.2
+    },
+    {
+      "month": "2025-05",
+      "label": "Mai 2025",
+      "shortLabel": "Mai 25",
+      "profit": 376.1,
+      "trades": 27,
+      "wins": 26,
+      "losses": 1,
+      "winRate": 96.3
+    },
+    {
+      "month": "2025-06",
+      "label": "Juin 2025",
+      "shortLabel": "Juin 25",
+      "profit": 310.88,
+      "trades": 22,
+      "wins": 20,
+      "losses": 2,
+      "winRate": 90.9
+    },
+    {
+      "month": "2025-07",
+      "label": "Juil 2025",
+      "shortLabel": "Juil 25",
+      "profit": 407.58,
+      "trades": 20,
+      "wins": 20,
+      "losses": 0,
+      "winRate": 100
+    },
+    {
+      "month": "2025-08",
+      "label": "Août 2025",
+      "shortLabel": "Août 25",
+      "profit": 64.39,
+      "trades": 16,
+      "wins": 14,
+      "losses": 2,
+      "winRate": 87.5
+    },
+    {
+      "month": "2025-09",
+      "label": "Sep 2025",
+      "shortLabel": "Sep 25",
+      "profit": 76.94,
+      "trades": 11,
+      "wins": 8,
+      "losses": 3,
+      "winRate": 72.7
+    },
+    {
+      "month": "2025-10",
+      "label": "Oct 2025",
+      "shortLabel": "Oct 25",
+      "profit": 524.62,
+      "trades": 24,
+      "wins": 21,
+      "losses": 3,
+      "winRate": 87.5
+    },
+    {
+      "month": "2025-11",
+      "label": "Nov 2025",
+      "shortLabel": "Nov 25",
+      "profit": 1246.7,
+      "trades": 25,
+      "wins": 24,
+      "losses": 1,
+      "winRate": 96
+    },
+    {
+      "month": "2025-12",
+      "label": "Déc 2025",
+      "shortLabel": "Déc 25",
+      "profit": 278.9,
+      "trades": 10,
+      "wins": 9,
+      "losses": 1,
+      "winRate": 90
+    },
+    {
+      "month": "2026-01",
+      "label": "Jan 2026",
+      "shortLabel": "Jan 26",
+      "profit": 1951.38,
+      "trades": 41,
+      "wins": 37,
+      "losses": 4,
+      "winRate": 90.2
+    },
+    {
+      "month": "2026-02",
+      "label": "Fév 2026",
+      "shortLabel": "Fév 26",
+      "profit": 5030.71,
+      "trades": 32,
+      "wins": 31,
+      "losses": 1,
+      "winRate": 96.9
+    },
+    {
+      "month": "2026-03",
+      "label": "Mar 2026",
+      "shortLabel": "Mar 26",
+      "profit": 7305.12,
+      "trades": 41,
+      "wins": 39,
+      "losses": 2,
+      "winRate": 95.1
+    },
+    {
+      "month": "2026-04",
+      "label": "Avr 2026",
+      "shortLabel": "Avr 26",
+      "profit": 4876.91,
+      "trades": 24,
+      "wins": 22,
+      "losses": 2,
+      "winRate": 91.7
+    },
+    {
+      "month": "2026-05",
+      "label": "Mai 2026",
+      "shortLabel": "Mai 26",
+      "profit": 4813.33,
+      "trades": 16,
+      "wins": 14,
+      "losses": 2,
+      "winRate": 87.5
+    },
+    {
+      "month": "2026-06",
+      "label": "Juin 2026",
+      "shortLabel": "Juin 26",
+      "profit": 7095.39,
+      "trades": 21,
+      "wins": 17,
+      "losses": 4,
+      "winRate": 81
+    },
+    {
+      "month": "2026-07",
+      "label": "Juil 2026",
+      "shortLabel": "Juil 26",
+      "profit": 6540.64,
+      "trades": 24,
+      "wins": 15,
+      "losses": 9,
+      "winRate": 62.5
+    }
+  ],
+  "equityCurve": [
+    {
+      "date": "2024-04-08",
+      "profit": 15.31,
+      "equity": 515.31,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-04-11",
+      "profit": 34.99,
+      "equity": 534.99,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-04-18",
+      "profit": 42.32,
+      "equity": 542.32,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-04-19",
+      "profit": 44.29,
+      "equity": 544.29,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-04-23",
+      "profit": 50.42,
+      "equity": 550.42,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-04-29",
+      "profit": 53.56,
+      "equity": 553.56,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-05-09",
+      "profit": 56.56,
+      "equity": 556.56,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-05-17",
+      "profit": 65.2,
+      "equity": 565.2,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-05-23",
+      "profit": 75.3,
+      "equity": 575.3,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-05-30",
+      "profit": 78.89,
+      "equity": 578.89,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-05-31",
+      "profit": 82.65,
+      "equity": 582.65,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-06-03",
+      "profit": 87.36,
+      "equity": 587.36,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-06-05",
+      "profit": 89.8,
+      "equity": 589.8,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-06-07",
+      "profit": 100.57,
+      "equity": 600.57,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-06-11",
+      "profit": 104.07,
+      "equity": 604.07,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-06-17",
+      "profit": 108.22,
+      "equity": 608.22,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-07-04",
+      "profit": 112.97,
+      "equity": 612.97,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-07-11",
+      "profit": 129.06,
+      "equity": 629.06,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-07-18",
+      "profit": 134.85,
+      "equity": 634.85,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-07-22",
+      "profit": 138.38,
+      "equity": 638.38,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-07-26",
+      "profit": 152.43,
+      "equity": 652.43,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-07-29",
+      "profit": 154.47,
+      "equity": 654.47,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-07-30",
+      "profit": 162.9,
+      "equity": 662.9,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-08-06",
+      "profit": 169.57,
+      "equity": 669.57,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-09-04",
+      "profit": 184.12,
+      "equity": 684.12,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-09-10",
+      "profit": 190.3,
+      "equity": 690.3,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-09-23",
+      "profit": 192.64,
+      "equity": 692.64,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-09-26",
+      "profit": 195.86,
+      "equity": 695.86,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-10-11",
+      "profit": 199.19,
+      "equity": 699.19,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-10-25",
+      "profit": 207.99,
+      "equity": 707.99,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-10-28",
+      "profit": 210.02,
+      "equity": 710.02,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-11-06",
+      "profit": 217.05,
+      "equity": 717.05,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-11-08",
+      "profit": 221.08,
+      "equity": 721.08,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-11-12",
+      "profit": 227.52,
+      "equity": 727.52,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-11-13",
+      "profit": 234.95,
+      "equity": 734.95,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-11-14",
+      "profit": 245.29,
+      "equity": 745.29,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-11-15",
+      "profit": 253.39,
+      "equity": 753.39,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-11-18",
+      "profit": 265.81,
+      "equity": 765.81,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-11-19",
+      "profit": 279.97,
+      "equity": 779.97,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-11-20",
+      "profit": 296.27,
+      "equity": 796.27,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-11-21",
+      "profit": 303.61,
+      "equity": 803.61,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-11-26",
+      "profit": 350.31,
+      "equity": 850.31,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-11-27",
+      "profit": 355.49,
+      "equity": 855.49,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-12-04",
+      "profit": 383.97,
+      "equity": 883.97,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-12-06",
+      "profit": 390.43,
+      "equity": 890.43,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-12-12",
+      "profit": 400.49,
+      "equity": 900.49,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2024-12-31",
+      "profit": 405.09,
+      "equity": 905.09,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-01-09",
+      "profit": 416.39,
+      "equity": 916.39,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-01-14",
+      "profit": 424.39,
+      "equity": 924.39,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-01-20",
+      "profit": 449.81,
+      "equity": 949.81,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-01-28",
+      "profit": 454.35,
+      "equity": 954.35,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-02-10",
+      "profit": 479.07,
+      "equity": 979.07,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-02-12",
+      "profit": 497.91,
+      "equity": 997.91,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-02-14",
+      "profit": 508.21,
+      "equity": 1008.21,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-02-21",
+      "profit": 523.57,
+      "equity": 1023.57,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-02-26",
+      "profit": 542.49,
+      "equity": 1042.49,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-03-03",
+      "profit": 563.99,
+      "equity": 1063.99,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-03-12",
+      "profit": 594.71,
+      "equity": 1094.71,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-03-13",
+      "profit": 606.71,
+      "equity": 1106.71,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-03-31",
+      "profit": 620.19,
+      "equity": 1120.19,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-04-07",
+      "profit": 637.63,
+      "equity": 1137.63,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-04-08",
+      "profit": 649.85,
+      "equity": 1149.85,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-04-09",
+      "profit": 672.37,
+      "equity": 1172.37,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-04-10",
+      "profit": 709.83,
+      "equity": 1209.83,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-04-14",
+      "profit": 733.91,
+      "equity": 1233.91,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-04-15",
+      "profit": 791.85,
+      "equity": 1291.85,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-04-16",
+      "profit": 846.59,
+      "equity": 1346.59,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-04-17",
+      "profit": 881.05,
+      "equity": 1381.05,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-04-21",
+      "profit": 909.03,
+      "equity": 1409.03,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-04-22",
+      "profit": 955.81,
+      "equity": 1455.81,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-04-23",
+      "profit": 896.55,
+      "equity": 1396.55,
+      "drawdown": 93.35,
+      "drawdownPct": 6.27
+    },
+    {
+      "date": "2025-04-28",
+      "profit": 941.26,
+      "equity": 1441.26,
+      "drawdown": 48.64,
+      "drawdownPct": 3.26
+    },
+    {
+      "date": "2025-05-05",
+      "profit": 982.2,
+      "equity": 1482.2,
+      "drawdown": 7.7,
+      "drawdownPct": 0.52
+    },
+    {
+      "date": "2025-05-07",
+      "profit": 994.37,
+      "equity": 1494.37,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-05-08",
+      "profit": 1051.87,
+      "equity": 1551.87,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-05-12",
+      "profit": 1065.22,
+      "equity": 1565.22,
+      "drawdown": 20.38,
+      "drawdownPct": 1.29
+    },
+    {
+      "date": "2025-05-14",
+      "profit": 1106.82,
+      "equity": 1606.82,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-05-19",
+      "profit": 1152.19,
+      "equity": 1652.19,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-05-20",
+      "profit": 1190.88,
+      "equity": 1690.88,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-05-21",
+      "profit": 1218.85,
+      "equity": 1718.85,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-05-22",
+      "profit": 1227.95,
+      "equity": 1727.95,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-05-23",
+      "profit": 1256.8,
+      "equity": 1756.8,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-05-26",
+      "profit": 1268.92,
+      "equity": 1768.92,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-05-28",
+      "profit": 1298.52,
+      "equity": 1798.52,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-05-29",
+      "profit": 1317.36,
+      "equity": 1817.36,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-06-02",
+      "profit": 1325.16,
+      "equity": 1825.16,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-06-04",
+      "profit": 1333.6,
+      "equity": 1833.6,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-06-06",
+      "profit": 1402.8,
+      "equity": 1902.8,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-06-11",
+      "profit": 1439.76,
+      "equity": 1939.76,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-06-12",
+      "profit": 1486.6,
+      "equity": 1986.6,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-06-18",
+      "profit": 1502.24,
+      "equity": 2002.24,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-06-19",
+      "profit": 1562.28,
+      "equity": 2062.28,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-06-25",
+      "profit": 1580.2,
+      "equity": 2080.2,
+      "drawdown": 9.48,
+      "drawdownPct": 0.45
+    },
+    {
+      "date": "2025-06-26",
+      "profit": 1598.88,
+      "equity": 2098.88,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-06-30",
+      "profit": 1628.24,
+      "equity": 2128.24,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-07-02",
+      "profit": 1693.76,
+      "equity": 2193.76,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-07-04",
+      "profit": 1705.2,
+      "equity": 2205.2,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-07-08",
+      "profit": 1734.24,
+      "equity": 2234.24,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-07-10",
+      "profit": 1788.03,
+      "equity": 2288.03,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-07-11",
+      "profit": 1862.11,
+      "equity": 2362.11,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-07-22",
+      "profit": 1871.9,
+      "equity": 2371.9,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-07-28",
+      "profit": 1940.15,
+      "equity": 2440.15,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-07-29",
+      "profit": 1984.09,
+      "equity": 2484.09,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-07-30",
+      "profit": 2035.82,
+      "equity": 2535.82,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-08-01",
+      "profit": 2050.96,
+      "equity": 2550.96,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-08-05",
+      "profit": 1904.54,
+      "equity": 2404.54,
+      "drawdown": 146.42,
+      "drawdownPct": 5.74
+    },
+    {
+      "date": "2025-08-06",
+      "profit": 1965.92,
+      "equity": 2465.92,
+      "drawdown": 85.04,
+      "drawdownPct": 3.33
+    },
+    {
+      "date": "2025-08-14",
+      "profit": 2036.99,
+      "equity": 2536.99,
+      "drawdown": 13.97,
+      "drawdownPct": 0.55
+    },
+    {
+      "date": "2025-08-18",
+      "profit": 2049.23,
+      "equity": 2549.23,
+      "drawdown": 1.73,
+      "drawdownPct": 0.07
+    },
+    {
+      "date": "2025-08-20",
+      "profit": 2074.97,
+      "equity": 2574.97,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-08-27",
+      "profit": 2100.21,
+      "equity": 2600.21,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-09-02",
+      "profit": 2160.18,
+      "equity": 2660.18,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-09-04",
+      "profit": 2186.97,
+      "equity": 2686.97,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-09-05",
+      "profit": 2199.21,
+      "equity": 2699.21,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-09-19",
+      "profit": 2219.49,
+      "equity": 2719.49,
+      "drawdown": 10.81,
+      "drawdownPct": 0.4
+    },
+    {
+      "date": "2025-09-22",
+      "profit": 2273.27,
+      "equity": 2773.27,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-09-23",
+      "profit": 2297.57,
+      "equity": 2797.57,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-09-30",
+      "profit": 2177.15,
+      "equity": 2677.15,
+      "drawdown": 120.42,
+      "drawdownPct": 4.3
+    },
+    {
+      "date": "2025-10-03",
+      "profit": 2224.09,
+      "equity": 2724.09,
+      "drawdown": 73.48,
+      "drawdownPct": 2.63
+    },
+    {
+      "date": "2025-10-07",
+      "profit": 2252.33,
+      "equity": 2752.33,
+      "drawdown": 45.24,
+      "drawdownPct": 1.62
+    },
+    {
+      "date": "2025-10-10",
+      "profit": 2292.59,
+      "equity": 2792.59,
+      "drawdown": 4.98,
+      "drawdownPct": 0.18
+    },
+    {
+      "date": "2025-10-14",
+      "profit": 2354.26,
+      "equity": 2854.26,
+      "drawdown": 32.77,
+      "drawdownPct": 1.14
+    },
+    {
+      "date": "2025-10-15",
+      "profit": 2269.35,
+      "equity": 2769.35,
+      "drawdown": 117.68,
+      "drawdownPct": 4.08
+    },
+    {
+      "date": "2025-10-16",
+      "profit": 2357.31,
+      "equity": 2857.31,
+      "drawdown": 29.72,
+      "drawdownPct": 1.03
+    },
+    {
+      "date": "2025-10-17",
+      "profit": 2483.37,
+      "equity": 2983.37,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-10-20",
+      "profit": 2551.77,
+      "equity": 3051.77,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-10-23",
+      "profit": 2595.75,
+      "equity": 3095.75,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-10-30",
+      "profit": 2701.77,
+      "equity": 3201.77,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-11-03",
+      "profit": 2713.89,
+      "equity": 3213.89,
+      "drawdown": 0.24,
+      "drawdownPct": 0.01
+    },
+    {
+      "date": "2025-11-04",
+      "profit": 2742.15,
+      "equity": 3242.15,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-11-05",
+      "profit": 2822.54,
+      "equity": 3322.54,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-11-07",
+      "profit": 2908.9,
+      "equity": 3408.9,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-11-10",
+      "profit": 3100.6,
+      "equity": 3600.6,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-11-12",
+      "profit": 3207.82,
+      "equity": 3707.82,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-11-14",
+      "profit": 3237.49,
+      "equity": 3737.49,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-11-17",
+      "profit": 3342.83,
+      "equity": 3842.83,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-11-18",
+      "profit": 3493.55,
+      "equity": 3993.55,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-11-25",
+      "profit": 3850.03,
+      "equity": 4350.03,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-11-26",
+      "profit": 3892.59,
+      "equity": 4392.59,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-11-28",
+      "profit": 3948.47,
+      "equity": 4448.47,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-12-04",
+      "profit": 4064.36,
+      "equity": 4564.36,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-12-22",
+      "profit": 4144.62,
+      "equity": 4644.62,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2025-12-23",
+      "profit": 3963.98,
+      "equity": 4463.98,
+      "drawdown": 180.64,
+      "drawdownPct": 3.89
+    },
+    {
+      "date": "2025-12-30",
+      "profit": 4009.87,
+      "equity": 4509.87,
+      "drawdown": 134.75,
+      "drawdownPct": 2.9
+    },
+    {
+      "date": "2025-12-31",
+      "profit": 4227.37,
+      "equity": 4727.37,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-01-05",
+      "profit": 4383.96,
+      "equity": 4883.96,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-01-07",
+      "profit": 4551.76,
+      "equity": 5051.76,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-01-08",
+      "profit": 4670.96,
+      "equity": 5170.96,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-01-09",
+      "profit": 4938.98,
+      "equity": 5438.98,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-01-13",
+      "profit": 4963.94,
+      "equity": 5463.94,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-01-14",
+      "profit": 4987.47,
+      "equity": 5487.47,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-01-16",
+      "profit": 4940.25,
+      "equity": 5440.25,
+      "drawdown": 220.78,
+      "drawdownPct": 3.9
+    },
+    {
+      "date": "2026-01-19",
+      "profit": 5082.24,
+      "equity": 5582.24,
+      "drawdown": 78.79,
+      "drawdownPct": 1.39
+    },
+    {
+      "date": "2026-01-20",
+      "profit": 5234.79,
+      "equity": 5734.79,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-01-21",
+      "profit": 5332.47,
+      "equity": 5832.47,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-01-22",
+      "profit": 5482.11,
+      "equity": 5982.11,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-01-23",
+      "profit": 5581.59,
+      "equity": 6081.59,
+      "drawdown": 0.72,
+      "drawdownPct": 0.01
+    },
+    {
+      "date": "2026-01-27",
+      "profit": 6096.4,
+      "equity": 6596.4,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-01-28",
+      "profit": 5692.31,
+      "equity": 6192.31,
+      "drawdown": 404.09,
+      "drawdownPct": 6.13
+    },
+    {
+      "date": "2026-01-29",
+      "profit": 6051.23,
+      "equity": 6551.23,
+      "drawdown": 45.17,
+      "drawdownPct": 0.68
+    },
+    {
+      "date": "2026-01-30",
+      "profit": 6178.75,
+      "equity": 6678.75,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-02-02",
+      "profit": 7019.24,
+      "equity": 7519.24,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-02-03",
+      "profit": 7474.36,
+      "equity": 7974.36,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-02-04",
+      "profit": 7982.76,
+      "equity": 8482.76,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-02-10",
+      "profit": 7641.56,
+      "equity": 8141.56,
+      "drawdown": 341.2,
+      "drawdownPct": 4.02
+    },
+    {
+      "date": "2026-02-11",
+      "profit": 7707.32,
+      "equity": 8207.32,
+      "drawdown": 275.44,
+      "drawdownPct": 3.25
+    },
+    {
+      "date": "2026-02-12",
+      "profit": 8844.07,
+      "equity": 9344.07,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-02-13",
+      "profit": 9311.05,
+      "equity": 9811.05,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-02-16",
+      "profit": 9565.85,
+      "equity": 10065.85,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-02-18",
+      "profit": 10070.45,
+      "equity": 10570.45,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-02-20",
+      "profit": 10442.98,
+      "equity": 10942.98,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-02-23",
+      "profit": 11209.46,
+      "equity": 11709.46,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-03-04",
+      "profit": 11345.07,
+      "equity": 11845.07,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-03-05",
+      "profit": 12061.32,
+      "equity": 12561.32,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-03-10",
+      "profit": 12361.05,
+      "equity": 12861.05,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-03-11",
+      "profit": 12677.47,
+      "equity": 13177.47,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-03-12",
+      "profit": 13056.81,
+      "equity": 13556.81,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-03-13",
+      "profit": 13910.58,
+      "equity": 14410.58,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-03-16",
+      "profit": 14193.32,
+      "equity": 14693.32,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-03-17",
+      "profit": 15528.61,
+      "equity": 16028.61,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-03-20",
+      "profit": 14886.37,
+      "equity": 15386.37,
+      "drawdown": 642.24,
+      "drawdownPct": 4.01
+    },
+    {
+      "date": "2026-03-24",
+      "profit": 16395.78,
+      "equity": 16895.78,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-03-25",
+      "profit": 16648.4,
+      "equity": 17148.4,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-03-26",
+      "profit": 16806.16,
+      "equity": 17306.16,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-03-27",
+      "profit": 16990.25,
+      "equity": 17490.25,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-03-30",
+      "profit": 17827.89,
+      "equity": 18327.89,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-03-31",
+      "profit": 18514.58,
+      "equity": 19014.58,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-04-02",
+      "profit": 18754.36,
+      "equity": 19254.36,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-04-06",
+      "profit": 19567.87,
+      "equity": 20067.87,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-04-07",
+      "profit": 20404.3,
+      "equity": 20904.3,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-04-08",
+      "profit": 20694.52,
+      "equity": 21194.52,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-04-13",
+      "profit": 20797,
+      "equity": 21297,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-04-14",
+      "profit": 21209.35,
+      "equity": 21709.35,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-04-15",
+      "profit": 21785.11,
+      "equity": 22285.11,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-04-16",
+      "profit": 21978.15,
+      "equity": 22478.15,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-04-20",
+      "profit": 22493.38,
+      "equity": 22993.38,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-04-22",
+      "profit": 22591.36,
+      "equity": 23091.36,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-04-23",
+      "profit": 22276.66,
+      "equity": 22776.66,
+      "drawdown": 1127.52,
+      "drawdownPct": 4.72
+    },
+    {
+      "date": "2026-04-24",
+      "profit": 22387.98,
+      "equity": 22887.98,
+      "drawdown": 1016.2,
+      "drawdownPct": 4.25
+    },
+    {
+      "date": "2026-04-27",
+      "profit": 22574.74,
+      "equity": 23074.74,
+      "drawdown": 829.44,
+      "drawdownPct": 3.47
+    },
+    {
+      "date": "2026-04-29",
+      "profit": 23098.22,
+      "equity": 23598.22,
+      "drawdown": 305.96,
+      "drawdownPct": 1.28
+    },
+    {
+      "date": "2026-04-30",
+      "profit": 23391.49,
+      "equity": 23891.49,
+      "drawdown": 12.69,
+      "drawdownPct": 0.05
+    },
+    {
+      "date": "2026-05-01",
+      "profit": 23725.09,
+      "equity": 24225.09,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-05-05",
+      "profit": 23995.33,
+      "equity": 24495.33,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-05-06",
+      "profit": 24591.15,
+      "equity": 25091.15,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-05-12",
+      "profit": 24937.15,
+      "equity": 25437.15,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-05-15",
+      "profit": 24934.57,
+      "equity": 25434.57,
+      "drawdown": 2.58,
+      "drawdownPct": 0.01
+    },
+    {
+      "date": "2026-05-20",
+      "profit": 25748.1,
+      "equity": 26248.1,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-05-21",
+      "profit": 26149.04,
+      "equity": 26649.04,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-05-25",
+      "profit": 26281.2,
+      "equity": 26781.2,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-05-26",
+      "profit": 27435.02,
+      "equity": 27935.02,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-05-27",
+      "profit": 27948.02,
+      "equity": 28448.02,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-05-28",
+      "profit": 28204.82,
+      "equity": 28704.82,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-06-01",
+      "profit": 29437.62,
+      "equity": 29937.62,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-06-02",
+      "profit": 29709.62,
+      "equity": 30209.62,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-06-03",
+      "profit": 29861.06,
+      "equity": 30361.06,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-06-05",
+      "profit": 29857.5,
+      "equity": 30357.5,
+      "drawdown": 3.56,
+      "drawdownPct": 0.01
+    },
+    {
+      "date": "2026-06-08",
+      "profit": 30652.36,
+      "equity": 31152.36,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-06-10",
+      "profit": 30986.31,
+      "equity": 31486.31,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-06-11",
+      "profit": 31167.77,
+      "equity": 31667.77,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-06-12",
+      "profit": 32104.37,
+      "equity": 32604.37,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-06-15",
+      "profit": 32100.33,
+      "equity": 32600.33,
+      "drawdown": 4.04,
+      "drawdownPct": 0.01
+    },
+    {
+      "date": "2026-06-16",
+      "profit": 32440.73,
+      "equity": 32940.73,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-06-22",
+      "profit": 33925.58,
+      "equity": 34425.58,
+      "drawdown": 13.82,
+      "drawdownPct": 0.04
+    },
+    {
+      "date": "2026-06-29",
+      "profit": 34567.18,
+      "equity": 35067.18,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-06-30",
+      "profit": 35300.21,
+      "equity": 35800.21,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-07-01",
+      "profit": 35849.65,
+      "equity": 36349.65,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-07-02",
+      "profit": 35844.77,
+      "equity": 36344.77,
+      "drawdown": 4.88,
+      "drawdownPct": 0.01
+    },
+    {
+      "date": "2026-07-03",
+      "profit": 36434.73,
+      "equity": 36934.73,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-07-07",
+      "profit": 37192.36,
+      "equity": 37692.36,
+      "drawdown": 9.7,
+      "drawdownPct": 0.03
+    },
+    {
+      "date": "2026-07-08",
+      "profit": 37177.6,
+      "equity": 37677.6,
+      "drawdown": 24.46,
+      "drawdownPct": 0.06
+    },
+    {
+      "date": "2026-07-10",
+      "profit": 37974.04,
+      "equity": 38474.04,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-07-13",
+      "profit": 38614.34,
+      "equity": 39114.34,
+      "drawdown": 150.52,
+      "drawdownPct": 0.38
+    },
+    {
+      "date": "2026-07-15",
+      "profit": 38611.29,
+      "equity": 39111.29,
+      "drawdown": 318.09,
+      "drawdownPct": 0.81
+    },
+    {
+      "date": "2026-07-17",
+      "profit": 38982.73,
+      "equity": 39482.73,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-07-20",
+      "profit": 39376.27,
+      "equity": 39876.27,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-07-21",
+      "profit": 40568.71,
+      "equity": 41068.71,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-07-28",
+      "profit": 41627.93,
+      "equity": 42127.93,
+      "drawdown": 0,
+      "drawdownPct": 0
+    },
+    {
+      "date": "2026-07-29",
+      "profit": 41840.85,
+      "equity": 42340.85,
+      "drawdown": 301.22,
+      "drawdownPct": 0.71
+    }
+  ],
+  "generatedAt": "2026-08-03T14:20:12.158Z",
+  "source": "statement2.htm"
+}
